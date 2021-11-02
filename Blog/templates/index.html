@@ -1,0 +1,30 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+  
+
+  
+    <div id="banner">
+    	<div class="img-banner" style="background-image: url(static/rasmlar/fon.jpg)">
+    		
+    	</div>
+    </div>
+
+    <div id="content">
+    	<div class="container">
+        <div class="row">
+          <div class="col-md-4 offset-md-1">
+            <div class="tabel">
+              
+              {% for c in cat  %}
+              <a href="#"><div class="block">{{c.name}}</div></a>
+                
+              {% endfor %}
+                
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock content %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Start Arikel</title>
+	<link rel="stylesheet" type="text/css" href="/static/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/index.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+	<nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Start Artikel</label>
+      <ul>
+        <li><a class="active" href="index.html">Bosh sahifa</a></li>
+        <li><a href="about.html">Haqimizda</a></li>
+        <li><a href="#">O'zbekcha</a></li>
+        <li><a href="../russkiy/index.html">Русскый</a></li>
+        <!-- <li><a href="#">Feedback</a></li> -->
+      </ul>
+    </nav>
+
+
+{% block content %}
+    
+{% endblock content %}
+    
+
+
+    <div class="clr"></div>
+    <div id="footer">
+    		<!-- <div class="container"> -->
+          <div class="str">
+            <h5>Biz bilan bog'lanish uchun:</h5>
+            <div>
+              <i class="fas fa-phone-alt"></i><span>+998 91 368 82 78</span><br>
+              <i class="far fa-envelope"></i><span>@azizbekjorayev.2001@mail.ru</span>
+            </div>
+          </div>
+          <div class="str">
+            <h5>Bizning manzil:</h5>
+            <i class="fas fa-map-marker-alt"></i><span>Namangan viloyati, Namangan tumani, Katta Toshbuloq shahri, Istiqlol ko'cha 64-uy</span>
+          </div>
+          <div class="str">
+            <h5>Start Artikel</h5>
+            <span>© 2021</span><br>
+            <span>Barcha huquqlar himoyalangan</span>
+          </div>  
+        </div>
+    </div>
+    <script src="vendors/js/jquery.js"></script>
+    <script src="vendors/js/popper.js"></script>
+    <script src="vendors/js/bootstrap.js"></script>
+  
+    <script>
+      // Get the current year for the copyright
+      $('#year').text(new Date().getFullYear());
+  
+    </script>
+</body>
+</html>
