@@ -6,7 +6,7 @@
 	
 
     <div id="banner">
-    	<div class="img-banner">
+    	<div class="img-banner" style="background-image: url('{{cat.img.url}}')">
     		
     	</div>
     </div>
@@ -16,62 +16,31 @@
 	<div id="header">
 		<div class="card">
 			<div class="row">
-				<div class="col-md-3">
+				
+				
+				{% for cat in cat.categoryies.all %}
+					
+				
+					
+				<div class="col-md-3 ml-5">
 					<div class="card-block">
 						<div class="card-header bg-dark text-white">
 							<h6 class="text-center">Mavzu:</h6>
-							<p>Maktabgacha ta'limda innovatsion texnalogiyalar</p>
+							<p>{{ cat.title }}</p>
 						</div>
 						<div class="card-body">
-							<p>Muallif:</p>
+							<p>Muallif: {{ cat.author }}</p>
+							<p></p>
 						</div>
 						<div class="card-footer">
 							<button class="btn btn-danger mt-2 btn-block">Maqolani o'qish</button>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
-					<div class="card-block">
-						<div class="card-header bg-dark text-white">
-							<h6 class="text-center">Mavzu:</h6>
-							<p>Maktabgacha ta'limda innovatsion texnalogiyalar</p>
-						</div>
-						<div class="card-body">
-							<p>Muallif:</p>
-						</div>
-						<div class="card-footer">
-							<button class="btn btn-danger mt-2 btn-block">Maqolani o'qish</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="card-block">
-						<div class="card-header bg-dark text-white">
-							<h6 class="text-center">Mavzu:</h6>
-							<p>Maktabgacha ta'limda innovatsion texnalogiyalar</p>
-						</div>
-						<div class="card-body">
-							<p>Muallif:</p>
-						</div>
-						<div class="card-footer">
-							<button class="btn btn-danger mt-2 btn-block">Maqolani o'qish</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="card-block">
-						<div class="card-header bg-dark text-white">
-							<h6 class="text-center">Mavzu:</h6>
-							<p>Maktabgacha ta'limda innovatsion texnalogiyalar</p>
-						</div>
-						<div class="card-body">
-							<p>Muallif:</p>
-						</div>
-						<div class="card-footer">
-							<button class="btn btn-danger mt-2 btn-block">Maqolani o'qish</button>
-						</div>
-					</div>
-				</div>
+				{% endfor %}
+					
+
+
 				<!-- <div class="col-md-2">
 					<div class="card-block">
 						<div class="card-header bg-dark text-white">

@@ -155,3 +155,10 @@ span{
   float: left;
   text-align: center;
 }
+
+#banner{
+  background-image: url(static/rasmlar/about-banner.jpg);
+  /*background-attachment: fixed;*/
+  height: 200px;
+  background-position: center right;
+}

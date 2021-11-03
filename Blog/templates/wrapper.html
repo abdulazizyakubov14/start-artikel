@@ -1,6 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz-UZ">
 <head>
+  <style>
+    .lang{
+      
+     float: right;
+      padding: 20px;
+    }
+    div.goog-te-gadget-simple{
+      background-color: #0082e6;
+      border: none;
+
+    }
+    a.goog-te-menu-value{
+      color: red;
+      
+    }
+
+
+  </style>
 	<meta charset="utf-8">
 	<title>Start Arikel</title>
 	<link rel="stylesheet" type="text/css" href="/static/index.css">
@@ -15,17 +33,30 @@
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
+
       <label class="logo">Start Artikel</label>
       <ul>
-        <li><a class="active" href="index.html">Bosh sahifa</a></li>
-        <li><a href="about.html">Haqimizda</a></li>
-        <li><a href="#">O'zbekcha</a></li>
-        <li><a href="../russkiy/index.html">Русскый</a></li>
+        <li><a class="active" href="{% url 'main:home' %}">Bosh sahifa</a></li>
+        <li><a href="{% url 'main:about' %}">Haqimizda</a></li>
+        <span class="lang" id="google_translate_element"></span>
+        </li>
+        
         <!-- <li><a href="#">Feedback</a></li> -->
       </ul>
     </nav>
+    <li>
 
 
+    
+    
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'uz', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
 {% block content %}
     
 {% endblock content %}

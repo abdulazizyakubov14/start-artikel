@@ -12,8 +12,8 @@ class Category(TranslatableModel):
     )
     img = models.ImageField("Katigriya rasmi", upload_to='cat_imgs/',)
 
-    def get_absolute_url(self):
-        return reverse("main:cat_detail", kwargs={"cat": self.slug})
+    # def get_absolute_url(self):
+    #     return reverse("main:cat_detail", kwargs={"slug": self.slug})
     
 
     class Meta:

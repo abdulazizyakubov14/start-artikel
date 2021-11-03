@@ -2,10 +2,17 @@
 {% load static %}
 {% block content %}
   
-
+<style>
+  #banner{
+  background-image: url('rasmlar/about-banner.jpg');
+  /*background-attachment: fixed;*/
+  height: 200px;
+  background-position: center right;
+}
+</style>
   
 
-<div id="banner" class="text-center text-gray">
+<div id="banner"  class="text-center text-gray">
   <div class="container py-5">
     <h1>Start Artikel haqida</h1>
     <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing <br>elit,</p> -->
@@ -22,7 +29,7 @@
         <p>Start Artikelni yaratishdan maqsad hozirgi kunda maqola yozayotgan, ilmiy ishlar bilan shug'ullanayotgan yoxud ilmiy daraja olish uchun harakat qilayotgan insonlarni ishlarini ommaga taqdim qilishdan iborat! </p>
       </div>
       <div class="col-md-6">
-        <img src="../rasmlar/ntn.jpg" class="img-fluid rounded-circle about-img" >
+        <img src="/static/rasmlar/ntn.jpg" class="img-fluid rounded-circle about-img" >
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@
             <div class="tabel">
               
               {% for c in cat  %}
-              <a href="#"><div class="block">{{c.name}}</div></a>
+              <a href="{% url 'main:detail' c.id %}"><div class="block">{{c.name}}</div></a>
                 
               {% endfor %}
                 
