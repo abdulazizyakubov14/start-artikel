@@ -2,10 +2,8 @@
 {% load static %}
 {% block content %}
   
-
-  
     <div id="banner">
-    	<div class="img-banner" style="background-image: url(static/rasmlar/fon.jpg)">
+    	<div class="img-banner" style="background-image: url('static/rasmlar/fon.jpg')">
     		
     	</div>
     </div>
@@ -16,8 +14,9 @@
           <div class="col-md-4 offset-md-1">
             <div class="tabel">
               
-              {% for c in cat  %}
-              <a href="{% url 'main:detail' c.id %}"><div class="block">{{c.name}}</div></a>
+              {% for c in cat %}
+              <a href="{{c.get_absolute_url}}"><div class="block">{{c.name}}</div></a>
+              
                 
               {% endfor %}
                 

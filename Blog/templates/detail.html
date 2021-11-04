@@ -1,10 +1,6 @@
 {% extends 'wrapper.html' %}
 
 {% block content %}
-    
-
-    
-
 	<style type="text/css">
 		*{
 			padding: 0;
@@ -80,43 +76,29 @@
 </style>
 
 
-	<nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo">Start Artikel</label>
-      <ul>
-        <li><a class="active" href="index.html">Bosh sahifa</a></li>
-        <li><a href="about.html">Haqimizda</a></li>
-        <li><a href="#">O'zbekcha</a></li>
-        <li><a href="../russkiy/index.html">Русскый</a></li>
-        <!-- <li><a href="#">Feedback</a></li> -->
-      </ul>
-    </nav>
 
-
-	<div class="title">
-		<h1><!-- Mavzu nomi --> Kids Club САЙТИ: ЛОЙИҲА МАЗМУНИ ВА ВАЗИФАЛАРИ</h1>
+<div id="invoice">
+	<div class="title" id="">
+		<h1><!-- Mavzu nomi --> {{object.title}}</h1>
 	</div>
 	<div class="articel">
 		<div class="container">
-			<p class="text"><!-- maqola matni -->
-			Мактабгача таълим муассасалари ўқитувчилари ҳар доим атрофдаги оламга сезгирлиги билан ажралиб турадилар. Зеро, умумий таълим амалиётининг ривожланиши мактабгача таълим тизимидаги барча ишчиларнинг ижодий, инновацион салоҳиятининг намоён бўлишига ёрдам беради. Бундай вазиятда касбий компетентлик айниқса муҳимдир, бу ўқитувчилар ва менежерларнинг шахсий ва касбий ривожланишига асосланади. Таълимни инновацион лойиҳалаш, инсон томонидан амалга оширилади ва амалиётга самарали қўлланилади, чунки инновацион фаолият ташкилотчилари илм-фан ютуқлари ва жамият эҳтиёжларига таянади.
-Ҳозирги кунда инновацион трансформациялар соҳаси аллақачон мактабгача таълим муассасалари ва ўқитувчи-инноваторларни, деярли ҳар бир мактабгача таълим муассасасини қамраб олади. Замонавий бошланғич таълим жараёнида болаларни ривожлантирувчи характерга эга бўлган таълим тизими тадбиқ қилинади. Унда кичик мактаб ёшидаги болалар ўз ёш хусусиятлари ва тафаккур ҳамда руҳий тараққиёт даражалари ўзлаштириш имконини берадиган таълимий фаолиятга киришадилар. Бинобарин, бу фаолият ўқувчилар учун етакчи фаолият ҳисобланади. Кичик мактаб ёшидаги болаларда ўқиш ҳамда ўрганишга қаратилган фаолиятнинг шаклланишида, ҳар бир ўқув предмети бўйича назарий билимларни эгаллаш жараёнида уларнинг онги ва тафаккури жадал тарзда ривожланади. Бу онг ва тафаккур ўз характерига кўра назарий ҳамда илмий тушунчаларни ўзлаштириш натижасида вужудга келган онг ва тафаккур бўлиб, боланинг жадал тарзда тараққий этишини, дунёқарашининг ривожланишини таъминлайди. 
-Мактаб ёшигача бўлган болалик – бу инсониятнинг ривожланишининг бошланғич даври бўлиб, бу даврда инсоният томонидан тан олинган умуминсоний қадриятлар билан дастлабки танишиш содир бўлади, бола ўзининг "мен" ини эгаллайди, индивидуаллик намоён бўлиш зарурлигини фаол англайди, шунингдек болалар жамоатчилиги болалар ижтимоийлашувининг биринчи институти сифатида шаклланган [2].
-Мактабгача тарбия муассасаларининг таълим жараёнининг етакчи мақсадлари – мактабгача ёшдаги болаликни тўлақонли яшаш учун қулай шарт-шароитлар яратиш, шахснинг индувидуал маданияти асосларини шакллантириш, замонавий глобаллашган жамиятда ҳаётга, мактабда ўқишга тайёргарлик, руҳий ва жисмоний фазилатларни мос равишда ривожлантиришга қаратилган. Ушбу мақсадлар болалар фаолиятининг турлари (ўйин, мулоқот, меҳнат, билим, мусиқий ва бадиий ўқиш) жараёнида амалга оширилади.
-
+		<p class="text"><!-- maqola matni -->
+			{% autoescape off %}
+				{{object.subtitle}}
+			{% endautoescape %}
+			
 		</p>
 
 		<div class="foot">
 			<div class="znz">
-				<p class="data">03.11.2021</p>
+				<p class="data">{{object.date|date:'Y-m-d'}}</p>
 			</div>
-			<button>Yuklab olish</button>
-			<p>Muallif: <span>Azizbek Jo'rayev</span></p>
+			<button id="download" >Yuklab olish</button>
+			<p>Muallif: <span>{{object.author}}</span></p>
 		</div>
 	</div>
+</div>
 </div>
 
 <!-- bu qismda joylangan sanasi turadi -->
@@ -152,37 +134,60 @@ if (dropdowns.length) {
 }
 
 // Handle closing dropdowns if a user clicked the body
-window.addEventListener('mouseup', (event) => {
-  if (dropdownIsOpen) {
-    dropdowns.forEach((dropdownButton) => {
-      let dropdown = document.querySelector('#' + dropdownButton.dataset.dropdown)
-      let targetIsDropdown = dropdown == event.target
+// window.addEventListener('mouseup', (event) => {
+//   if (dropdownIsOpen) {
+//     dropdowns.forEach((dropdownButton) => {
+//       let dropdown = document.querySelector('#' + dropdownButton.dataset.dropdown)
+//       let targetIsDropdown = dropdown == event.target
 
-      if (dropdownButton == event.target) {
-        return
-      }
+//       if (dropdownButton == event.target) {
+//         return
+//       }
 
-      if ((!targetIsDropdown) && (!dropdown.contains(event.target))) {
-        dropdown.classList.remove('show')
-      }
-    })
-  }
-})
+//       if ((!targetIsDropdown) && (!dropdown.contains(event.target))) {
+//         dropdown.classList.remove('show')
+//       }
+//     })
+//   }
+// })
 
-// Open links in mobiles
-function handleSmallScreens() {
-  document.querySelector('.navbar-toggler')
-    .addEventListener('click', () => {
-    let navbarMenu = document.querySelector('.navbar-menu')
+// // Open links in mobiles
+// function handleSmallScreens() {
+//   document.querySelector('.navbar-toggler')
+//     .addEventListener('click', () => {
+//     let navbarMenu = document.querySelector('.navbar-menu')
 
-    if (navbarMenu.style.display === 'flex') {
-      navbarMenu.style.display = 'none'
-      return
-    }
+//     if (navbarMenu.style.display === 'flex') {
+//       navbarMenu.style.display = 'none'
+//       return
+//     }
 
-    navbarMenu.style.display = 'flex'
-  })
+//     navbarMenu.style.display = 'flex'
+//   })
+// }
+
+// handleSmallScreens()</script>
+
+<!--JQUERY-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+<script type="text/javascript">
+	window.onload = function () {
+  document.getElementById("download")
+      .addEventListener("click", () => {
+          const invoice = this.document.getElementById("invoice");
+          console.log(invoice);
+          console.log(window);
+          var opt = {
+              margin: 1,
+              filename: 'myfile.pdf',
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: { scale: 2 },
+              jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+          };
+          html2pdf().from(invoice).set(opt).save();
+      })
 }
-
-handleSmallScreens()</script>
+</script>
 {% endblock content %}

@@ -32,13 +32,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'parler',
     'main',
     'ckeditor',
     'ckeditor_uploader',
@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -121,22 +121,19 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+
+
+# gettext = lambda s: s
+# LANGUAGES = (
+#     ('uz', gettext('Uzbek')),
+#     ('ru', gettext('Russian')),
+# )
+# MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-LOCALE_PATHS = (
- os.path.join(BASE_DIR, 'locale/'),
-)
-PARLER_LANGUAGES = {
- None: (
- {'code': 'uz'},
- {'code': 'ru'},
- ),
- 'default': {
- 'fallback': 'uz', #domiy 
- 'hide_untranslated': False,
- }
-}
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join('staic')
+STATIC_ROOT = os.path.join('static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join('media')
 STATICFILES_DIRS = (os.path.join('staticfiles'),)

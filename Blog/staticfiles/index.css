@@ -100,7 +100,7 @@ nav ul li a:hover{
   height: 600px;
 }
 .img-banner{
-  background-image: url("../static/rasmlar/fon.jpg");
+  background-image: url("../rasmlar/fon.jpg");
   background-size: cover;
 }
 
@@ -154,11 +154,4 @@ span{
   width: 33.3%;
   float: left;
   text-align: center;
-}
-
-#banner{
-  background-image: url(static/rasmlar/about-banner.jpg);
-  /*background-attachment: fixed;*/
-  height: 200px;
-  background-position: center right;
 }

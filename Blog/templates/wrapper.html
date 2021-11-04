@@ -1,28 +1,10 @@
 <!DOCTYPE html>
-<html lang="uz-UZ">
+<html lang="en-US">
 <head>
-  <style>
-    .lang{
-      
-     float: right;
-      padding: 20px;
-    }
-    div.goog-te-gadget-simple{
-      background-color: #0082e6;
-      border: none;
-
-    }
-    a.goog-te-menu-value{
-      color: red;
-      
-    }
-
-
-  </style>
 	<meta charset="utf-8">
 	<title>Start Arikel</title>
+ <script src="/static/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="/static/index.css">
-	<link rel="stylesheet" type="text/css" href="/static/index.js">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
@@ -38,25 +20,9 @@
       <ul>
         <li><a class="active" href="{% url 'main:home' %}">Bosh sahifa</a></li>
         <li><a href="{% url 'main:about' %}">Haqimizda</a></li>
-        <span class="lang" id="google_translate_element"></span>
-        </li>
-        
-        <!-- <li><a href="#">Feedback</a></li> -->
       </ul>
     </nav>
-    <li>
-
-
-    
-    
-      <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'uz', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-        </script>
-    
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    
+  
 {% block content %}
     
 {% endblock content %}
@@ -92,6 +58,6 @@
       // Get the current year for the copyright
       $('#year').text(new Date().getFullYear());
   
-    </script>
+    </script>   
 </body>
 </html>

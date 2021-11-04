@@ -1,46 +1,46 @@
 {% extends 'wrapper.html' %}
 {% load static %}
 {% block content %}
+
+{% for s in articels %}
+<div class="img-banner" style="width: 100%; height: 400px; background-image: url({{s.img.url}});">
+	
+{% endfor %}
 	
 
-	
+</div>
 
-    <div id="banner">
-    	<div class="img-banner" style="background-image: url('{{cat.img.url}}')">
-    		
-    	</div>
-    </div>
-
-<br><br><br>
+<br>
 
 	<div id="header">
 		<div class="card">
 			<div class="row">
-				
-				
-				{% for cat in cat.categoryies.all %}
-					
-				
-					
+				{% if articels %}	
+					{% for art in articels %}			
 				<div class="col-md-3 ml-5">
 					<div class="card-block">
 						<div class="card-header bg-dark text-white">
 							<h6 class="text-center">Mavzu:</h6>
-							<p>{{ cat.title }}</p>
+							<p>{{ art.title }}</p>
 						</div>
 						<div class="card-body">
-							<p>Muallif: {{ cat.author }}</p>
+							<p>Muallif: {{ art.author }}</p>
 							<p></p>
 						</div>
 						<div class="card-footer">
-							<button class="btn btn-danger mt-2 btn-block">Maqolani o'qish</button>
+							
+
+							<a href="{% url 'main:articel_detail' art.id %}" class="btn btn-danger mt-2 btn-block">Maqolani o'qish</a>
 						</div>
 					</div>
 				</div>
 				{% endfor %}
-					
+				{% else %}
 
-
+				<div class="alert alert-warning text-center m-auto">
+					<h2>Maqola topilmadi !</h2>
+				  </div>
+{% endif %}
 				<!-- <div class="col-md-2">
 					<div class="card-block">
 						<div class="card-header bg-dark text-white">
@@ -70,5 +70,7 @@
 			</div>
 		</div>
 	</div>
+
+
 
 	{% endblock content %}
