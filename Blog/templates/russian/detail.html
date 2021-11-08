@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Start Arikel</title>
+	<link rel="stylesheet" type="text/css" href="/static/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/index.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			text-decoration: none;
+		}
+
+
+.title{
+	width: 100%;
+	margin: 35px 0;
+}
+.title h1{
+	text-align: center;
+	font-family: 'Acme', sans-serif;
+	font-family: 'Titillium Web', sans-serif;
+	/*font-size: 45px;*/
+}
+.articel{
+	width: 100%;
+	text-align: justify;
+}
+.container{
+	width: 65%;
+	margin: 0 auto;
+}
+.articel .text{
+	font-size: 21px;
+	font-family: 'Titillium Web', sans-serif;
+}
+.book{
+	width: 100%;
+	/*text-align: center;*/
+	margin: 20px 10px;
+}
+.book p{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 18px;
+	color: #333;
+}
+.book ul{
+	justify-content: space-around;
+	padding: 5px;
+}
+.book ul li{
+	padding: 1px;
+	margin: 5px 50px;
+	justify-content: space-around;
+}
+.foot{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px 0;
+}
+.foot .data{
+	margin: 0 20%;
+
+}
+.foot button{
+	margin: 0 20%;
+	width: 200px;
+	height: 5vh;
+	float: right;
+	background-color: #FF8F09;
+	border: none;
+	cursor: pointer;
+	font-family: sans-serif;
+	font-size: 15px;
+}
+</style>
+</head>
+<nav>
+	<input type="checkbox" id="check">
+	<label for="check" class="checkbtn">
+	  <i class="fas fa-bars"></i>
+	</label>
+	<label class="logo">Start Artikel</label>
+	<ul>
+	  <li><a class="active" href="{% url 'languae:homes' %}">Домашняя страница</a></li>
+	  <li><a href="{% url 'languae:abouts' %}">О нас</a></li>
+	  <li><a href="/">Узбекский</a></li>
+	  <li><a href="#">Русскый</a></li>
+	  <!-- <li><a href="#">Feedback</a></li> -->
+	</ul>
+  </nav>
+
+<div id="invoice">
+	<div class="title" id="">
+		<h1><!-- Mavzu nomi --> {{object.title}}</h1>
+	</div>
+	<div class="articel">
+		<div class="container">
+		<p class="text"><!-- maqola matni -->
+			<img src="{{object.img.url}}" alt="">
+			{% autoescape off %}
+				{{object.subtitle}}
+			{% endautoescape %}
+			
+		</p>
+
+		<div class="foot">
+			<div class="znz">
+				<p class="data">{{object.date|date:'Y-m-d'}}</p>
+			</div>
+			<button id="download" >Yuklab olish</button>
+			<p>Muallif: <span>{{object.author}}</span></p>
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- bu qismda joylangan sanasi turadi -->
+
+
+	<div class="book">
+		<p class="adr">Foydalanilgan adabiyotlar</p>
+		<ul type="1" start="1">
+		<li>1.	Атутов П.Р. Педагогика трудового становления учащихся: содержательно-процессуальные основы. Избранные труды в 2-х томах / Под ред. Г.Н. Никольской. – М.: Издат. фирма «Кумир», 2001. – Т. 1–2.</li>
+	</ul>
+	</div>
+<script type="text/javascript">
+let dropdowns = document.querySelectorAll('.navbar .dropdown-toggler')
+let dropdownIsOpen = false
+
+// Handle dropdown menues
+if (dropdowns.length) {
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener('click', (event) => {
+      let target = document.querySelector('#' + event.target.dataset.dropdown)
+
+      if (target) {
+        if (target.classList.contains('show')) {
+          target.classList.remove('show')
+          dropdownIsOpen = false
+        } else {
+          target.classList.add('show')
+          dropdownIsOpen = true
+        }
+      }
+    })
+  })
+}
+
+// Handle closing dropdowns if a user clicked the body
+// window.addEventListener('mouseup', (event) => {
+//   if (dropdownIsOpen) {
+//     dropdowns.forEach((dropdownButton) => {
+//       let dropdown = document.querySelector('#' + dropdownButton.dataset.dropdown)
+//       let targetIsDropdown = dropdown == event.target
+
+//       if (dropdownButton == event.target) {
+//         return
+//       }
+
+//       if ((!targetIsDropdown) && (!dropdown.contains(event.target))) {
+//         dropdown.classList.remove('show')
+//       }
+//     })
+//   }
+// })
+
+// // Open links in mobiles
+// function handleSmallScreens() {
+//   document.querySelector('.navbar-toggler')
+//     .addEventListener('click', () => {
+//     let navbarMenu = document.querySelector('.navbar-menu')
+
+//     if (navbarMenu.style.display === 'flex') {
+//       navbarMenu.style.display = 'none'
+//       return
+//     }
+
+//     navbarMenu.style.display = 'flex'
+//   })
+// }
+
+// handleSmallScreens()</script>
+
+<!--JQUERY-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+<script type="text/javascript">
+	window.onload = function () {
+  document.getElementById("download")
+      .addEventListener("click", () => {
+          const invoice = this.document.getElementById("invoice");
+          console.log(invoice);
+          console.log(window);
+          var opt = {
+              margin: 1,
+              filename: 'myfile.pdf',
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: { scale: 2 },
+              jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+          };
+          html2pdf().from(invoice).set(opt).save();
+      })
+}
+</script>

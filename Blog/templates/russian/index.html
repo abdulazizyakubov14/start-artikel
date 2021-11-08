@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Start Arikel</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/index.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+
+	<nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Start Artikel</label>
+      <ul>
+        <li><a class="active" href="{% url 'languae:homes' %}">Домашняя страница</a></li>
+        <li><a href="{% url 'languae:abouts' %}">О нас</a></li>
+        <li><a href="/">Узбекский</a></li>
+        <li><a href="#">Русскый</a></li>
+        <!-- <li><a href="#">Feedback</a></li> -->
+      </ul>
+    </nav>
+    <div id="banner">
+    	<div class="img-banner" style="background-image: url('../static/rasmlar/fon.jpg')">
+    		
+    	</div>
+    </div>
+    <div id="content">
+    	<div class="container">
+        <div class="row">
+          <div class="col-md-4 offset-md-1">
+            <div class="tabel">
+              {% for c in cat %}
+              <a href="{% url 'languae:cat_detail' c.id %}"><div class="block">{{c.name}}</div></a>
+              
+                
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clr"></div>
+    <div id="footer">
+        <!-- <div class="container"> -->
+          <div class="str">
+            <h5>Чтобы связаться с нами:</h5>
+            <div>
+              <i class="fas fa-phone-alt"></i><span>+998 91 368 82 78</span><br>
+              <i class="far fa-envelope"></i><span>@azizbekjorayev.2001@mail.ru</span>
+            </div>
+          </div>
+          <div class="str">
+            <h5>Наш адрес:</h5>
+            <i class="fas fa-map-marker-alt"></i><span>Наманганская область, Наманганский район, город Катта Ташбулак, улица Истиклол, дом 64</span>
+          </div>
+          <div class="str">
+            <h5>Start Artikel</h5>
+            <span>© 2021</span><br>
+            <span>Все права защищены</span>
+          </div>  
+        </div>
+    </div>
+</body>
+</html>

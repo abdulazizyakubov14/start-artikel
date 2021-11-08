@@ -1,11 +1,12 @@
 from django.db import models
 
 # Create your models here.
-from parler.models import TranslatableModel, TranslatedFields
+# from parler.models import TranslatableModel, TranslatedFields
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
+
 
 class Category(models.Model):
     name = models.CharField('Katigoriya Nomi',max_length=150)

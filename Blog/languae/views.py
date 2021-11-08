@@ -1,11 +1,11 @@
 from django.shortcuts import render,get_object_or_404
-from .models import *
+from languae.models import *
 from django.views.generic.detail import DetailView
 # Create your views here.
 
 def index(request):
-    category = Category.objects.all()
-    return render(request,'index.html',{'cat':category})
+    category = Categorys.objects.all()
+    return render(request,'russian/index.html',{'cat':category})
 
 # def categoryDetail(request,category_slug):
 # 	category = get_object_or_404(Category,slug=category_slug)
@@ -16,13 +16,13 @@ def index(request):
 # 	return render(request, 'biologiya.html', context)
 
 class CategoryDetailView(DetailView):
-	model = Category
-	template_name = 'biologiya.html'
+	model = Categorys
+	template_name = 'russian/biologiya.html'
 
 
 class ArticelDetailView(DetailView):
-	model = Article
-	template_name = 'detail.html'
+	model = Articles
+	template_name = 'russian/detail.html'
 
 # def img(request):
 # 	img = Category.objects.all()
@@ -30,7 +30,7 @@ class ArticelDetailView(DetailView):
 
 
 def about(request):
-    return render(request,'about.html')
+    return render(request,'russian/about.html')
 
 # class DetailPageView(DetailView):
 #     model = Article

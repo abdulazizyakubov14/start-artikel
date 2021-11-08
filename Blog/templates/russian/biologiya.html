@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Biologiya</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/biologiya.css">
+	<link rel="stylesheet" type="text/css" href="/static/index.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+	<nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+		  <i class="fas fa-bars"></i>
+		</label>
+		<label class="logo">Start Artikel</label>
+		<ul>
+		  <li><a class="active" href="{% url 'languae:homes' %}">Домашняя страница</a></li>
+		  <li><a href="{% url 'languae:abouts' %}">О нас</a></li>
+		  <li><a href="/">Узбекский</a></li>
+		  <li><a href="#">Русскый</a></li>
+		  <!-- <li><a href="#">Feedback</a></li> -->
+		</ul>
+	  </nav>
+
+
+	  <div style="background-image: url('{{object.img.url}}'); height:400px;">
+	</div>
+<br>
+
+	<div id="header">
+		<div class="card">
+			<div class="row">
+	
+				{% for c in object.categoryies.all %}
+										
+				<div class="col-md-3 ml-5">
+					<div class="card-block">
+						<div class="card-header bg-dark text-white">
+							<h6 class="text-center">Mavzu:</h6>
+							<p>{{ c.title }}</p>
+						</div>
+						<div class="card-body">
+							<p>Muallif: {{ c.author }}</p>
+							<p></p>
+						</div>
+						<div class="card-footer">
+							
+
+							<a href="{% url 'languae:art_detail' c.id %}" class="btn btn-danger mt-2 btn-block">Maqolani o'qish</a>
+						</div>
+					</div>
+				</div><br>
+				{% endfor %} 
+				<!-- <div class="col-md-2">
+					<div class="card-block">
+						<div class="card-header bg-dark text-white">
+							<h4>Mavzu:</h4>
+						</div>
+						<div class="card-body">
+							<p>Muallif</p>
+						</div>
+						<div class="card-footer">
+							<button class="btn btn-danger mt-2 btn-block">Get it</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card-block">
+						<div class="card-header bg-dark text-white">
+							<h4>Mavzu:</h4>
+						</div>
+						<div class="card-body">
+							<p>Muallif</p>
+						</div>
+						<div class="card-footer">
+							<button class="btn btn-danger mt-2 btn-block">Get it</button>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+    		<!-- <div class="container"> -->
+          <div class="str">
+            <h5>Чтобы связаться с нами:</h5>
+            <div>
+              <i class="fas fa-phone-alt"></i><span>+998 91 368 82 78</span><br>
+              <i class="far fa-envelope"></i><span>@azizbekjorayev.2001@mail.ru</span>
+            </div>
+          </div>
+          <div class="str">
+            <h5>Наш адрес:</h5>
+            <i class="fas fa-map-marker-alt"></i><span>Наманганская область, Наманганский район, город Катта Ташбулак, улица Истиклол, дом 64</span>
+          </div>
+          <div class="str">
+            <h5>Start Artikel</h5>
+            <span>© 2021</span><br>
+            <span>Все права защищены</span>
+          </div>  
+        </div>
+    </div>
+
+</body>
+</html>

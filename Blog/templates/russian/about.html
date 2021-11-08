@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://github.com/secondtruth/startmin.git">
+  <link rel="stylesheet" href="/static/all.css">
+  <link rel="stylesheet" href="/static/bootstrap.css" >
+  <link rel="stylesheet" href="/static/about.css">
+  <title>О нас</title>
+</head>
+
+<body>
+	<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">Start Artikel</label>
+    <ul>
+      <li><a class="active" href="{% url 'languae:homes' %}">Домашняя страница</a></li>
+      <li><a href="{% url 'languae:abouts' %}">О нас</a></li>
+      <li><a href="/">Узбекский</a></li>
+      <li><a href="#">Русскый</a></li>
+      <!-- <li><a href="#">Feedback</a></li> -->
+    </ul>
+  </nav>
+
+<div id="banner" class="text-center text-gray">
+  <div class="container py-5">
+    <h1>О запуске Articel</h1>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing <br>elit,</p> -->
+  </div>
+</div>
+
+<div id="about-info">
+  <div class="container">
+    <div class="row text-justify py-5">
+      <div class="col-md-6">
+        <h3>Что такое старт артикль?</h3>
+        <p>Старт Артикель это сайт, на котором публикуются научно-популярные статьи. На этом сайте есть много научных направлений, которые имеют широкую аудиторию.! Есть также научные журналы, которые публикуют статьи, но интернет-публикация доминирует в том смысле, что журнал не ждет публикации, в отличие от этих журналов, и с очень большим количеством пользователей, публикующих интернет-сайт. Старт Артикель является одним из таких сайтов в интернете.</p>
+        <p>Цель создания Start Article-сделать доступными для общественности работы людей, которые в настоящее время пишут статьи, занимаются научной работой или пытаются получить ученую степень! </p>
+      </div>
+      <div class="col-md-6">
+        <img src="/static/rasmlar/ntn.jpg" class="img-fluid rounded-circle about-img" >
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="about-icons" class="pb-5">
+  <div class="container text-white text-center">
+    <div class="row">
+      <div class="col-md-4" >
+        <div class="card bg-danger p-4">
+          <i class="fas fa-dollar-sign fa-3x"></i>
+          <h4>Приемлемая цена</h4>
+          <p class="m-0">Доступные цены на каждую статью. 5$ на отца</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" >
+        <div class="card bg-dark p-4">
+          <i class="fas fa-users fa-3x"></i>
+          <h4>Пользователи</h4>
+          <p class="m-0">Наличие широкой и качественной аудитории</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" >
+        <div class="card bg-danger p-4">
+          <i class="far fa-newspaper fa-3x"></i>
+          <h4>Удобство</h4>
+          <p class="m-0">Идеальное удобство при печати статей</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row my-4">
+      <div class="col-md-4" >
+        <div class="card bg-dark p-4">
+          <i class="fas fa-box fa-3x"></i>
+          <h4>Sample Heading</h4>
+          <p class="m-0">Lorem ipsum dolor sit amet, consectetur  adipisicing elit, sed do eiusmod
+          tempor</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" >
+        <div class="card bg-danger p-4">
+          <i class="fas fa-credit-card fa-3x"></i>
+          <h4>Sample Heading</h4>
+          <p class="m-0">Lorem ipsum dolor sit amet, consectetur  adipisicing elit, sed do eiusmod
+          tempor</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" >
+        <div class="card bg-dark p-4">
+          <i class="fas fa-coffee fa-3x"></i>
+          <h4>Sample Heading</h4>
+          <p class="m-0">Lorem ipsum dolor sit amet, consectetur  adipisicing elit, sed do eiusmod
+          tempor</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- FOOTER -->
+  <div id="footer">
+        <!-- <div class="container"> -->
+          <div class="str">
+            <h5>Чтобы связаться с нами:</h5>
+            <div>
+              <i class="fas fa-phone-alt"></i><span>+998 91 368 82 78</span><br>
+              <i class="far fa-envelope"></i><span>@azizbekjorayev.2001@mail.ru</span>
+            </div>
+          </div>
+          <div class="str">
+            <h5>Наш адрес:</h5>
+            <i class="fas fa-map-marker-alt"></i><span>Наманганская область, Наманганский район, город Катта Ташбулак, улица Истиклол, дом 64</span>
+          </div>
+          <div class="str">
+            <h5>Start Artikel</h5>
+            <span>© 2021</span><br>
+            <span>Все права защищены</span>
+          </div>  
+        </div>
+    </div>
+
+
+  <script src="/static/vendors/js/jquery.js"></script>
+  <script src="/static/vendors/js/popper.js"></script>
+  <script src="/static/vendors/js/bootstrap.js"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+
+  </script>
+</body>
+
+</html>
