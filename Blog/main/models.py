@@ -10,7 +10,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Category(models.Model):
     name = models.CharField('Katigoriya Nomi',max_length=150)
     slug = models.SlugField('*',max_length=150, unique=True)
-    
+    img = models.ImageField("Rasim", upload_to='cat_imgs',)
+
     class Meta:
         verbose_name = 'Katigoriya'
         verbose_name_plural = 'Katigoriyalar'
@@ -25,7 +26,6 @@ class Article(models.Model):
     title = models.TextField("Maqola nomi")
     subtitle = RichTextField()
     slug = models.SlugField("*")
-    img = models.ImageField("Rasm", upload_to='cat_imgs/',blank=True,null=True)
     category = models.ForeignKey("main.Category", related_name='categoryies' ,on_delete=models.CASCADE)
     author = models.CharField("Maqola aftori", max_length=50)
     date = models.DateField("Joylangan sanasi", auto_now=True,)

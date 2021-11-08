@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'parler',
     'main',
     'ckeditor',
     'ckeditor_uploader',
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'uz'
 
 TIME_ZONE = 'UTC'
 
@@ -121,6 +122,18 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+
+
+PARLER_LANGUAGES = {
+ None: (
+ {'code': 'uz'},
+ {'code': 'ru'},
+ ),
+ 'default': {
+ 'fallback': 'uz',
+ 'hide_untranslated': False,
+ }
+}
 
 
 # gettext = lambda s: s
